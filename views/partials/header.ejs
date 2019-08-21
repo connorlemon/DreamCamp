@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DreamCamp</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="/stylesheets/main.css">
+		<link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive|Lexend+Giga|Lexend+Mega&display=swap" rel="stylesheet">
+			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>	
+	</head>
+	<body>
+		
+<nav class="navbar navbar-expand-md fixed-top navbar-inverse">
+  	<a class="navbar-brand ml-2" href="/">DreamCamp</a>
+	<a class="nav-link" href="/campgrounds">Home<span class="sr-only">(current)</span></a>
+	<a class="nav-link" href="/campgrounds/5d54d50e8cd2fc143b8bf2aa">Campgrounds<span class="sr-only">(current)</span></a>
+  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  	</button>
+
+  <div class="collapse navbar-collapse justify-content-end mr-2" id="navbarTogglerDemo02">
+		  <ul class="navbar-nav justify-content-end mt-2 mt-lg-0">
+			  <li class="nav-item active">
+				
+			  </li>
+			  <% if(!currentUser){ %>
+				  <li class="nav-item">
+					<a class="nav-link" href="/login">Sign In</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="/register" tabindex="-1" aria-disabled="true">Register</a>
+				  </li>
+			  <% } else{ %>
+			  <li class="nav-item"><a class="nav-link disabled" href="#">Signed In As: <%= currentUser.username %></a></li>
+						<li class="nav-item">
+							<a class="nav-link" href="/logout">Logout</a></li>
+					<% } %>
+			</ul>
+  </div>
+</nav>
+	
+	<div class="container">
+		<% if(error && error.length > 0){ %>
+			<div class="alert alert-danger mt-2 mb-3" role="alert">
+				<%= error %>
+			</div>
+		<% } %>
+		<% if(success && success.length > 0){ %>
+		<div class="alert alert-success mt-2 mb-3" role="alert">
+			<%= success %>
+		</div>
+		<% } %>
+	</div>
+	

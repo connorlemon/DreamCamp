@@ -1,0 +1,74 @@
+<% include ../partials/header %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<p class="lead text-center mt-3">Campgrounds</p>
+			<div class="list-group">
+				<% allCampgrounds.forEach(function(eachCampground){ %>
+					<% if("/campgrounds/" + eachCampground._id === currentUrl) { %>
+						<li class="list-group-item"><a class="btn btn-list-active" href="/campgrounds/<%= eachCampground._id %>"><%= eachCampground.name %></a></li>
+					<% } else { %>
+						<li class="list-group-item"><a class="btn btn-list" href="/campgrounds/<%= eachCampground._id %>"><%= eachCampground.name %></a></li>
+					<% } %>
+				<% }); %>
+				<li class="list-group-item"><a class="btn btn-list-3" href="/campgrounds/new">Add New</a></li>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="thumbnail">
+				<img class="img-responsive img-render" src="<%= campground.image %>">
+				<div class="caption-full">
+					<div class="d-flex justify-content-between">
+						<h4 class="show-header"><%= campground.name %></h4>
+						<h4 class="pull-right">$<%= campground.price %>/night</h4>
+					</div>
+					<p><%= campground.description %></p>
+					<div class="d-flex justify-content-start">
+						<p id="submitted-by">
+							<em>Submitted By: <%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %></em>
+						</p>
+					<% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+						<a class="btn btn-xs btn-warning ml-2" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
+						<form class="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+							<button class="btn btn-xs btn-danger ml-2">
+								Delete
+							</button>
+						</form>
+					<% } %>
+					</div>
+				</div>
+			</div>
+			<div class="well">
+				<div class="text-right">
+					<a class="btn btn-list-3" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
+				</div>
+				<% campground.comments.forEach(function(comment){ %>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="d-flex justify-content-center pt-2">
+								<strong><%= comment.author.username %> __ </strong>
+								<span class="pull-right-2"><%= moment(comment.createdAt).fromNow() %></span>
+							</div>
+							<div id="comment-text">
+								<p><strong><%= comment.text %></strong></p>
+							</div>
+							
+						<% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+								<a class="btn btn-xs btn-warning mt-0 mb-2" href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">
+								Edit
+								</a>
+								<form class="delete-form" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+									<button class="btn btn-xs btn-danger mt-0 mb-2">
+										Delete
+									</button>
+								</form>
+						<% } %>
+						</div>
+					</div>
+				<%	}) %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% include ../partials/footer %>
