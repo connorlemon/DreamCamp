@@ -18,7 +18,15 @@ var commentRoutes = require("./routes/comments"),
 	indexRoutes = require("./routes/index");
 
 
-mongoose.connect("mongodb://localhost:27017/dreamcamp_v2", {useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost:27017/dreamcamp_v2", {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://connorlemon22:Porsche11.@cluster0-vifur.mongodb.net/test?retryWrites=true&w=majority', {
+	useNewUrlParser: true,
+	useCreateIndex: true
+}).then(() => {
+	console.log('Connected to DB!');
+}).catch(err => {
+	console.log('ERROR:', err.message);
+});
 mongoose.set('useFindAndModify', false);
 
 app.set("view engine", "ejs");
@@ -57,7 +65,7 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
 
 
-seedDB(); seed the database
+// seedDB();
 
 app.listen(process.env.PORT || 3000, function(){
 	console.log("The DreamCamp server has started...");
