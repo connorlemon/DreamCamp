@@ -17,16 +17,19 @@ var commentRoutes = require("./routes/comments"),
 	campgroundRoutes = require("./routes/campgrounds"),
 	indexRoutes = require("./routes/index");
 
+mongoose.connect(process.env.DATABASEURL);
 
-// mongoose.connect("mongodb://localhost:27017/dreamcamp_v2", {useNewUrlParser: true});
-mongoose.connect('mongodb+srv://connorlemon22:Porsche11.@cluster0-vifur.mongodb.net/test?retryWrites=true&w=majority', {
-	useNewUrlParser: true,
-	useCreateIndex: true
-}).then(() => {
-	console.log('Connected to DB!');
-}).catch(err => {
-	console.log('ERROR:', err.message);
-});
+// mongoose.connect("mongodb://localhost:27017/yelp_camp_v8", {useNewUrlParser: true});
+
+// mongoose.connect('mongodb+srv://connorlemon22:Porsche11.@cluster0-vifur.mongodb.net/test?retryWrites=true&w=majority', {
+// 	useNewUrlParser: true,
+// 	useCreateIndex: true
+// }).then(() => {
+// 	console.log('Connected to DB!');
+// }).catch(err => {
+// 	console.log('ERROR:', err.message);
+// });
+
 mongoose.set('useFindAndModify', false);
 
 app.set("view engine", "ejs");
