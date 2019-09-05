@@ -1,0 +1,379 @@
+body {
+	background-color: rgba(188, 255, 248, 0.53);
+	padding-top: 60px;
+	border-left: 10px solid black;
+	border-right: 10px solid black;
+}
+
+.navbar {
+	padding: 0;
+	margin-bottom: 0;
+}
+
+.navbar-inverse {
+	border: 5px solid black;
+	background-image: url("https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80");
+	font-family: 'Lexend Giga', sans-serif;
+}
+
+.navbar-inverse .navbar-brand {
+	color: white;
+}
+
+.navbar-inverse .navbar-brand:hover {
+	color: rgb(188, 255, 248);
+}
+
+.navbar-inverse .navbar-nav li a {
+	color: white;
+}
+
+.navbar-inverse .navbar-nav li a:hover {
+	color: rgb(188, 255, 248);
+}
+
+.navbar-inverse .nav-link {
+	color: white;
+}
+
+.navbar-inverse .nav-link:hover {
+	color: rgb(188, 255, 248);
+}
+
+.bottom-brand {
+	font-size: .7rem;
+}
+
+.jumbotron {
+	text-align: center;
+	background-image: url("https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80");
+	border: 10px solid black;
+	padding-bottom: 3%;
+	margin-bottom: 1%;
+}
+
+.jumbotron h1 {
+	font-size: 5rem;
+	color: white;
+}
+
+.jumbotron h3 {
+	color: rgb(188, 255, 248);
+	font-family: 'Lexend Giga', sans-serif;
+	font-size: 1.4rem;
+	padding-top: 3%;
+	border-top: 1px solid white;
+}
+
+.jumbotron p {
+	font-size: 1.1rem;
+	padding-top: 10px;
+	color: white;
+	font-family: 'Lexend Mega', sans-serif;
+}
+
+.star-container {
+	background-image: url("https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80");
+	width: 60%;
+	padding-bottom: 10%;
+	border: 30px solid black;
+}
+
+.star-container a {
+	padding-top: 3%;
+	color: white;
+}
+
+.header-text {
+	padding-top: 15%;
+	font-family: 'Lexend Giga', sans-serif;
+	font-size: 2.2rem;
+	text-align: center;
+	color: rgb(188, 255, 248);
+}
+
+.subheader-text {
+	padding-top: 9%;
+	font-family: 'Lexend Giga', sans-serif;
+	font-size: 1rem;
+	text-align: center;
+	color: rgb(188, 255, 248);
+}
+
+.caption {
+	font-family: 'Lexend Giga', sans-serif;
+}
+
+hr {
+	color: white;
+}
+
+.form-container {
+	width: 60%; 
+	margin: 25px auto;
+}
+
+input[type=text] {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	color: white;
+	background-color: black;
+	text-decoration: none;
+	text-align: center;
+}
+
+input[type=text]::placeholder {
+	color: white;
+	text-align: center;
+}
+
+input[type=password] {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	color: white;
+	background-color: black;
+	text-decoration: none;
+	text-align: center;
+}
+
+input[type=password]::placeholder {
+	color: white;
+	text-align: center;
+}
+
+input[type=number] {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	color: white;
+	background-color: black;
+	text-decoration: none;
+	text-align: center;
+}
+
+input[type=number]::placeholder {
+	color: white;
+	text-align: center;
+}
+
+.btn {
+	border-radius: 0;
+}
+
+.btn-landing {
+	background: none;
+	font-size: 5.5rem;
+	/* font-family: 'Cedarville Cursive', cursive; */
+	margin-top: 0;
+	border: 0;
+}
+
+.btn-landing:hover {
+	background-color: rgba(231, 252, 252, 0);
+	color: white;
+}
+
+.btn-unique {
+	background: none;
+	font-size: 1rem;
+	font-family: 'Lexend Giga', sans-serif;
+	margin-top: 15px;
+	border: 2px solid rgb(188, 255, 248);
+}
+
+.btn-unique:hover {
+	background-color: rgba(231, 252, 252, 0);
+	color: rgb(188, 255, 248);
+	border: 2px solid white;
+}
+
+.btn-unique-2 {
+	background: none;
+	font-size: 1.1rem;
+	font-family: 'Lexend Giga', sans-serif;
+	margin-top: 20px;
+	color: rgb(188, 255, 248);
+	border: 2px solid rgb(188, 255, 248);
+}
+
+.btn-unique-2:hover {
+	background-color: rgba(231, 252, 252, 0);
+	color: white;
+	border: 2px solid white;
+}
+
+.btn-unique-3 {
+	font-family: 'Lexend Giga', sans-serif;
+	color: rgb(188, 255, 248);
+	background: none;
+	font-size: 1rem;
+	padding-bottom: 3%;
+	margin-top: 8%;
+}
+
+.btn-unique-3:hover {
+	background-color: rgba(231, 252, 252, 0);
+	color: white;
+	border: 2px solid white;
+}
+
+.btn-list {
+	color: rgb(11, 131, 119);
+	width: 100%;
+	margin: 0;
+	padding: 15px;
+	background: none;
+	font-size: 1rem;
+	font-family: 'Lexend Giga', sans-serif;
+}
+
+.btn-list:hover {
+	background-color: black;
+	color: white;
+}
+
+.btn-list-active {
+	color: white;
+	width: 100%;
+	margin: 0;
+	padding: 15px;
+	background-color: black;
+	font-size: 1rem;
+	font-family: 'Lexend Giga', sans-serif;
+}
+
+.btn-list-active:hover {
+	color: white;
+	width: 100%;
+	margin: 0;
+	padding: 15px;
+	background-color: black;
+	font-size: 1rem;
+	font-family: 'Lexend Giga', sans-serif;
+}
+
+.btn-list-2 {
+	color: black;
+	margin: 0;
+	margin-top: 15px;
+	background: none;
+	font-size: 1rem;
+	border: 2px solid black;
+}
+
+.btn-list-2:hover {
+	border: 2px solid black;
+	background-color: black;
+	color: white;
+}
+
+.btn-list-3 {
+	color: white;
+	width: 100%;
+	margin: 0;
+	padding: 15px;
+	background-color: rgba(11, 131, 119, .8);
+	font-size: 1rem;
+	font-family: 'Lexend Giga', sans-serif;
+}
+
+.btn-list-3:hover {
+	color: white;
+	background-color: black;
+}
+
+.btn-xs {
+	font-size: 1rem;
+	padding: 2px 5px 2px 5px;
+	height: 29px;
+	width: 80px;
+}
+
+.thumbnail {
+	padding: 0;
+	border: 5px solid black;
+	margin-bottom: 2%;
+}
+
+.thumbnail img {
+	width: 100%;
+	border-bottom: 5px solid black;
+}
+
+.thumbnail .caption-full {
+	color: rgb(188, 255, 248);
+	background-image: url("https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80");
+	padding: 5px 18px 0px 18px;
+	border: 5px solid black;
+}
+
+.thumbnail .caption {
+	padding-top: 20px;
+}
+
+.thumb-display {
+	margin-bottom: 2%;
+}
+
+.well {
+	border: 3px solid rgb(11, 131, 119);
+	margin-bottom: 11%;
+	text-align: center;
+}
+
+.lead {
+	background-color: black;
+	color: white;
+	margin: 0;
+	padding: 15px;
+	border: 0;
+	border-bottom: 2px solid white;
+	font-weight: bold;
+	font-family: 'Lexend Giga', sans-serif;
+}
+
+.list-group-item {
+	padding: 0;
+	border: 0;
+}
+
+.show-header {
+	display: inline;
+	font-family: 'Lexend Giga', sans-serif;
+	font-size: 2.2rem;
+	text-align: center;
+	color: white;
+}
+
+.pull-right {
+	display: inline;
+	color: white;
+	padding-top: 8px;
+}
+
+#submitted-by {
+	color: white;
+}
+
+#comment-text {
+	margin: 0 40px 0 40px;
+}
+
+.delete-form {
+	display: inline;
+}
+
+.alert-success {
+	background-color: white;
+	color: green;
+	border: 2px solid green;
+	text-align: center;
+	margin: auto;
+}
+
+.alert-danger {
+	background-color: white;
+	color: red;
+	border: 2px solid red;
+	text-align: center;
+	margin: auto;
+}
