@@ -1,6 +1,7 @@
 body {
 	background-color: rgba(188, 255, 248, 0.53);
 	padding-top: 60px;
+	padding-bottom: 60px;
 	border-left: 10px solid black;
 	border-right: 10px solid black;
 }
@@ -53,7 +54,7 @@ body {
 }
 
 .jumbotron h1 {
-	font-size: 5rem;
+	font-size: 4.2rem;
 	color: white;
 }
 
@@ -295,8 +296,18 @@ input[type=number]::placeholder {
 }
 
 .thumbnail img {
+	max-height: 550px;
 	width: 100%;
 	border-bottom: 5px solid black;
+}
+
+.thumbnail-resize {
+	height: 100%;
+}
+
+.img-resize {
+	height: 222px;
+	width: 100%;
 }
 
 .thumbnail .caption-full {
@@ -312,6 +323,19 @@ input[type=number]::placeholder {
 
 .thumb-display {
 	margin-bottom: 2%;
+}
+
+.row .display-flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Google Maps */
+#map {
+	margin: auto;
+	height: 250px;
+	width: 100%;
+	margin-bottom: 15px;
 }
 
 .well {

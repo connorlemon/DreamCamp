@@ -1,7 +1,7 @@
 <% include ../partials/header %>
 <div class="container">
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-lg-3 col-md-12 order-2 order-lg-1">
 			<p class="lead text-center mt-3">Campgrounds</p>
 			<div class="list-group">
 				<% allCampgrounds.forEach(function(eachCampground){ %>
@@ -14,7 +14,7 @@
 				<li class="list-group-item"><a class="btn btn-list-3" href="/campgrounds/new">Add New</a></li>
 			</div>
 		</div>
-		<div class="col-md-9">
+		<div class="col-lg-9 col-md-12 order-1 order-lg-2 mt-3">
 			<div class="thumbnail">
 				<img class="img-responsive img-render" src="<%= campground.image %>">
 				<div class="caption-full">
@@ -38,7 +38,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="well">
+			<div id="map"></div>
+			<div class="well mb-0">
 				<div class="text-right">
 					<a class="btn btn-list-3" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
 				</div>
@@ -70,5 +71,34 @@
 		</div>
 	</div>
 </div>
+
+<script>
+  function initMap() {
+    var lat = <%= campground.lat %>;
+    var lng = <%= campground.lng %>;
+    var center = {lat: lat, lng: lng };
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center: center,
+        scrollwheel: false
+    });
+    var contentString = `
+      <strong><%= campground.name %><br />
+      <%= campground.location %></strong>
+      <p><%= campground.description %></p>
+    `
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    var marker = new google.maps.Marker({
+        position: center,
+        map: map
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7O25M5AIsEjdHJXHCTsuQDudOSa0OnQI&callback=initMap"></script>
 
 <% include ../partials/footer %>
