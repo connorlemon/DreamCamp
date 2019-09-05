@@ -9,15 +9,17 @@ var express = require("express"),
 	methodOverride = require("method-override"),
 	Campground = require("./models/campground"),
 	Comment = require("./models/comment"),
-	User = require("./models/user"),
-	seedDB = require("./seeds");
+	User = require("./models/user");
+	// seedDB = require("./seeds");
 
 //requiring routes
 var commentRoutes = require("./routes/comments"),
 	campgroundRoutes = require("./routes/campgrounds"),
 	indexRoutes = require("./routes/index");
 
-mongoose.connect(process.env.DATABASEURL);
+//a safety variable in case DATABASEURL is empty, || means OR
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/dream-camp-v3";
+mongoose.connect(url);
 
 // mongoose.connect("mongodb://localhost:27017/yelp_camp_v8", {useNewUrlParser: true});
 
