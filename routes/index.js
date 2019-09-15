@@ -3,14 +3,14 @@ var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
 
+// ====================
+// AUTHORIZATION ROUTES
+// ====================
+
 //Root Route
 router.get("/", function(req, res){
 	res.render("landing");
 });
-
-// ====================
-// AUTHORIZATION ROUTES
-// ====================
 
 // Show register form
 router.get("/register", function(req, res){

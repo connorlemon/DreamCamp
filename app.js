@@ -19,21 +19,9 @@ var commentRoutes = require("./routes/comments"),
 	campgroundRoutes = require("./routes/campgrounds"),
 	indexRoutes = require("./routes/index");
 
-//a safety variable in case DATABASEURL is empty, || means OR
+//a safety variable in case DATABASEURL is empty
 var url = process.env.DATABASEURL || "mongodb://localhost:27017/dream-camp-v3";
-mongoose.connect(url);
-
-// mongoose.connect("mongodb://localhost:27017/yelp_camp_v8", {useNewUrlParser: true});
-
-// mongoose.connect('mongodb+srv://connorlemon22:Porsche11.@cluster0-vifur.mongodb.net/test?retryWrites=true&w=majority', {
-// 	useNewUrlParser: true,
-// 	useCreateIndex: true
-// }).then(() => {
-// 	console.log('Connected to DB!');
-// }).catch(err => {
-// 	console.log('ERROR:', err.message);
-// });
-
+mongoose.connect(url, {useNewUrlParser: true});
 mongoose.set('useFindAndModify', false);
 
 app.set("view engine", "ejs");
@@ -46,7 +34,7 @@ app.locals.moment = require("moment");
 
 // AUTHENTICATION - Passport Configuration
 app.use(require("express-session")({
-	secret: "Nala is a pretty kitty",
+	secret: "Nala cat",
 	resave: false,
 	saveUninitialized: false
 }));
@@ -58,7 +46,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-//Places middleware on every route, making currentUser available on every route
+//Places middleware on every route, making currentUser, error, success, and currentURL available on every route
 app.use(function(req, res, next){
 	res.locals.currentUser = req.user;
 	res.locals.error = req.flash("error");
@@ -70,9 +58,6 @@ app.use(function(req, res, next){
 app.use("/", indexRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
-
-
-// seedDB();
 
 app.listen(process.env.PORT || 3000, function(){
 	console.log("The DreamCamp server has started...");

@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var Campground = require("../models/campground");
+
 //If you require a directory, it will automatically include index.js
 var middleware = require("../middleware");
 
@@ -74,8 +75,9 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
 //Make sure this route is after anything that uses a URL that contains
 // "/campgrounds/anything" or else those paths will be treated as an :id
 router.get("/:id", function(req, res){
-	//find the campground with provided ID
-	Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
+
+//find the campground with provided ID
+		Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
 		if(err){
 			console.log(err);
 		} else{
